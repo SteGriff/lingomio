@@ -2,7 +2,7 @@
 
 ## Login
 
-POST http://localhost:1954/api/login
+POST http://localhost:3000/api/login
 content-type: application/json
 
 {
@@ -12,11 +12,11 @@ content-type: application/json
 
 ### Get Books metadata for User
 
-GET http://localhost:1954/api/books
+GET http://localhost:3000/api/books
 
 ### Create/Update book
 
-POST http://localhost:1954/api/book/cltsv8hml00002a69f01ejx03
+POST http://localhost:3000/api/book/cltsv8hml00002a69f01ejx03
 content-type: application/json
 
 {
@@ -26,4 +26,4 @@ content-type: application/json
 
 ### Get Book
 
-GET http://localhost:1954/api/book/cltsv8hml00002a69f01ejx03
+GET http://localhost:3000/api/book/cltsv8hml00002a69f01ejx03

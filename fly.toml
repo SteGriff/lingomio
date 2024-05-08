@@ -1,0 +1,29 @@
+# fly.toml app configuration file generated for lingomio-purple-water-31 on 2024-05-08T10:42:38+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'lingomio'
+primary_region = 'lhr'
+
+[build]
+
+[[mounts]]
+  source = 'data'
+  destination = '/.data'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[env]
+  PORT = 3000

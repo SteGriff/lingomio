@@ -21,6 +21,7 @@ app.use(express.json());
 
 // Gets NODE_ENV, which defaults to development.
 const isDev = app.get("env") === "development";
+if (!isDev) app.set('trust proxy', true);
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "njk");
@@ -175,7 +176,10 @@ app.post("/api/book/:cuid", auth, async (req, res) => {
   return res.json(result);
 });
 
+const hostname = "0.0.0.0";
+const port = process.env.PORT || 3000;
+
 // Start server
-const listener = app.listen(process.env.PORT || 443, () => {
-  console.log("Your app is listening on port " + listener.address().port);
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/, isDev:${isDev}`);
 });
