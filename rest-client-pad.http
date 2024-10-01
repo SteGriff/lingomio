@@ -26,4 +26,4 @@ content-type: application/json
 
 ### Get Book
 
-GET http://localhost:3000/api/book/cltsv8hml00002a69f01ejx03
+GET http://localhost:3000/api/book/cm1awvsat00002a6d21f6jqn8

@@ -121,6 +121,7 @@ PetiteVue.createApp({
   },
   // Methods
   select(element, word) {
+    this.menu = false;
     const prevSelected = this.selected;
     this.selected = element.id;
     if (word) this.selectedWord = word.id;
@@ -131,6 +132,7 @@ PetiteVue.createApp({
     console.log("hideElementTools", this.addToolLocation, this.addPoint);
   },
   toggleTools(element) {
+    this.menu = false;
     const toolLocationTarget = element ? "ELEMENT" : "END";
     this.addPoint = element ? element.order : this.nextOrdinal();
     this.addToolLocation =
@@ -138,6 +140,7 @@ PetiteVue.createApp({
     console.log("toggleTools", this.addToolLocation, this.addPoint);
   },
   add(elementType) {
+    this.menu = false;
     const order =
       this.addToolLocation === "END" ? this.maxOrdinal() : this.addPoint;
 
@@ -199,7 +202,7 @@ PetiteVue.createApp({
     if (!this.currentBook.cuid)
       this.currentBook.cuid = cuid();
 
-    console.log("Save", this.currentBook.cuid);
+    //console.log("Save", this.currentBook.cuid);
     // Save to LS and server
     const json = JSON.stringify(this.currentBook);
     window.localStorage.setItem(CONTENT, json);
@@ -318,7 +321,7 @@ PetiteVue.createApp({
   async postBook() {
     const data = this.currentBook;
     const url = "/api/book/" + data.cuid;
-    console.log("postBook", url);
+    //console.log("postBook", url);
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -344,12 +347,21 @@ PetiteVue.createApp({
     this.currentBook = newBook();
     this.toast(`Saved ${lastBookName} and created ${this.currentBook.name} ✨`);
   },
-  async loadBook() {
+  async loadBook(book) {
     this.save();
+    console.log("load", book.cuid);
     if (!this.userModel) {
       this.dialog = "LOGIN";
       return;
     }
-
+    const response = await fetch("/api/book/" + book.cuid);
+    const json = await response.json();
+    const bookModel = json.model;
+    bookModel.elements = JSON.parse(bookModel.elementsJson);
+    delete bookModel["elementsJson"];
+    this.currentBook = bookModel;
+    this.toast(`Loaded ${this.currentBook.name}`);
+    this.dialog = null;
+    this.menu = false;
   }
 }).mount();
