@@ -1,8 +1,5 @@
 export const writeLog = (db, eventKey, key, text) => {
-  const dbResult = db
-    .prepare(
-      "insert into [Logging] (Created, Event, Key, Text) values (unixepoch(), ?, ?, ?)"
-    )
+  db.prepare("insert into [Logging] (Created, Event, Key, Text) values (unixepoch(), ?, ?, ?)")
     .run(eventKey, key, text);
 };
 

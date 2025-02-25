@@ -9,6 +9,8 @@ import { fileURLToPath } from "url";
 import { authenticateUser, createUser, auth } from "./logic/auth.mjs";
 import { getSuccess, isSuccess } from "./results.mjs";
 import { createOrUpdateBook, getBook, getBooks } from "./logic/books.mjs";
+import { LLM, TTS, checkAndIncreaseUsage } from "./logic/quota.mjs";
+import { explain } from "./logic/explain/explain.mjs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -169,10 +171,26 @@ app.post("/api/book/:cuid", auth, async (req, res) => {
   return res.json(result);
 });
 
+// Explain endpoint
+app.post("/api/explain", auth, async (req, res) => {
+  const userId = req.session.user.id;
+  const feature = LLM; // Assuming LLM feature for explanation
+
+  if (!checkAndIncreaseUsage(db, userId, feature)) {
+    return res.status(403).json({ error: "Quota exceeded" });
+  }
+
+  const { text } = req.body;
+  const language = "Vietnamese"; // Stubbed language
+  const explanation = await explain(language, text);
+
+  return res.json({ explanation });
+});
+
+// Start server
 const hostname = "0.0.0.0";
 const port = process.env.PORT || 3000;
 
-// Start server
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/, isDev:${isDev}`);
 });
