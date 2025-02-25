@@ -202,11 +202,18 @@ PetiteVue.createApp({
     if (!this.currentBook.cuid)
       this.currentBook.cuid = cuid();
 
-    //console.log("Save", this.currentBook.cuid);
-    // Save to LS and server
+    console.log("Save", this.currentBook.cuid);
+
+    // Save to LS
     const json = JSON.stringify(this.currentBook);
     window.localStorage.setItem(CONTENT, json);
-    this.postBook();
+
+    // Save to server if we're logged in
+    // and the elements have been changed from initial book
+    const hasChanged = !elementFactory.isUnchangedElements(this.currentBook.elements);
+    if (this.userModel && hasChanged) {
+      this.postBook();
+    }
   },
   saveName() {
     this.save();

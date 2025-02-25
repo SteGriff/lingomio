@@ -9,7 +9,8 @@
                 </svg>
             </button>
         </div>
-        <h1 class="white f5 b">Lingomio</h1>
+        <h1 class="f5 b">Lingomio</h1>
+        <p v-if="userModel" class="f6 mh3">{{ currentBook.name }}</p>
     </div>
     <nav v-if="menu" class="fixed bg-black white left-0 right-0 top-0 bottom-0 mw6-ns pa3">
         <div class="flex w-100 center">
@@ -18,7 +19,7 @@
                     <span class="pull-up">&times;</span>
                 </button>
             </div>
-            <h1 class="white f5 b">Lingomio</h1>
+            <h1 class="f5 b">Lingomio</h1>
         </div>
         <p v-if="userModel" class="b">{{userModel.username}}</p>
         <p v-else class="b">
@@ -33,11 +34,11 @@
         <p>
             <a class="pointer" @click="booksDialog()">📚 Books</a>
         </p>
-        <p>
+        <p v-if="userModel">
             <a class="pointer" @click="startNew()">✨ New Book</a>
         </p>
         <hr />
-        <p>📤 <a class="pointer" @click="dialog = 'EXPORT'">Export</a>
+        <p>📤 <a class="pointer" @click="dialog = 'EXPORT'">Export/Import</a>
         </p>
         <p>👩‍🏫 <a class="pointer" @click="dialog = 'VOCAB'">Vocab</a>
         </p>
@@ -240,9 +241,21 @@
         <textarea class="w-100 mt3 minh4 code f6" v-if="importing" v-model="importContent"></textarea>
     </div>
     <div v-if="dialog === 'BOOKS'" class="center measure">
-        <div v-for="book in books" @click="loadBook(book)" class="mv2 ba br2 b--black pa3 pointer flex justify-between">
-            <span class="b">{{book.name}}</span>
-            <span class="ml3">{{timeSince(book.updated)}} ago</span>
+        <div v-if="userModel">
+            <div v-for="book in books" @click="loadBook(book)"
+                class="mv2 ba br2 b--black pa3 pointer flex justify-between">
+                <span class="b">{{book.name}}</span>
+                <span class="ml3">{{timeSince(book.updated)}} ago</span>
+            </div>
+        </div>
+        <div v-else>
+            <p>
+                <button type="button" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4"
+                    @click="dialog = 'LOGIN'">
+                    Log in
+                </button>
+                to save and sync multiple books.
+            </p>
         </div>
     </div>
     <div v-if="dialog === 'RENAME'">
