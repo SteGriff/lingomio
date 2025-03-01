@@ -7,7 +7,7 @@ import path from "path";
 import { sste } from "./sste.js";
 import { fileURLToPath } from "url";
 import { authenticateUser, createUser, auth } from "./logic/auth.mjs";
-import { getSuccess, isSuccess } from "./results.mjs";
+import { getSuccess, getError, isSuccess } from "./results.mjs";
 import { createOrUpdateBook, getBook, getBooks } from "./logic/books.mjs";
 import { LLM, TTS, checkAndIncreaseUsage } from "./logic/quota.mjs";
 import { explain } from "./logic/explain/explain.mjs";
@@ -174,17 +174,32 @@ app.post("/api/book/:cuid", auth, async (req, res) => {
 // Explain endpoint
 app.post("/api/explain", auth, async (req, res) => {
   const userId = req.session.user.id;
-  const feature = LLM; // Assuming LLM feature for explanation
 
-  if (!checkAndIncreaseUsage(db, userId, feature)) {
-    return res.status(403).json({ error: "Quota exceeded" });
+  if (!checkAndIncreaseUsage(db, userId, LLM)) {
+    return res.status(403).send(getError("Quota exceeded"));
   }
 
   const { text } = req.body;
-  const language = "Vietnamese"; // Stubbed language
+  // TODO: Use language from book.learningLanguage
+  const language = null; //"Vietnamese";
   const explanation = await explain(language, text);
 
-  return res.json({ explanation });
+  const response = getSuccess(explanation);
+  return res.json(response);
+});
+
+// Speak endpoint
+app.post("/api/speak", auth, async (req, res) => {
+  const userId = req.session.user.id;
+
+  if (!checkAndIncreaseUsage(db, userId, TTS)) {
+    return res.status(403).send(getError("Quota exceeded"));
+  }
+
+  // TODO: Use Azure Cognitive Services to speak in the learningLanguage of the book
+  // Picking an appropriate voice profile
+  const response = getSuccess("Not implemented");
+  return res.json(response);
 });
 
 // Start server

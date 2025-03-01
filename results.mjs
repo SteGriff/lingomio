@@ -11,12 +11,6 @@ export const getSuccess = (model) => {
   return resultModel;
 };
 
-export const getFailure = (model) => {
-  const resultModel = getResult(model);
-  resultModel.status = "Error";
-  return resultModel;
-};
-
 export const getError = (message, model = null) => {
   return {
     status: "Error",

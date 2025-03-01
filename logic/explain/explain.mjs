@@ -4,7 +4,10 @@ import { responseFormat } from './responseFormat.mjs';
 const openai = new OpenAI(); // key defaults to process.env["OPENAI_API_KEY"]
 
 export const explain = async (languageName, phrase) => {
-    const devPrompt = `Explain the ${languageName} sentence word-by-word`;
+    const devPrompt = languageName
+        ? `Explain the ${languageName} sentence word-by-word`
+        : `Explain this sentence word-by-word. BE CONCISE.`;
+
     const completion = await openai.chat.completions.create({
         messages: [
             { role: 'developer', content: devPrompt },
