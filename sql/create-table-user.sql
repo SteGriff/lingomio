@@ -8,5 +8,6 @@ create table [User]
   [password] nvarchar(100) not null,
   [salt] nvarchar(200) not null,
   [active] int not null default 1,
-  [currentBook] nvarchar(25) null
+  [currentBook] nvarchar(25) null,
+  [planId] integer not null default 1 -- Default to 'Free' plan
 );

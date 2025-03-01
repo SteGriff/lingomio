@@ -14,7 +14,9 @@ db.pragma("journal_mode = WAL");
 
 const scriptRoot = "../sql/";
 const scripts = [
+  "create-table-plan.sql",
   "create-table-user.sql",
+  "create-table-user-quota.sql",
   "create-table-logging.sql",
   "create-table-book.sql"
 ];

@@ -2,7 +2,11 @@ export const LLM = 'llm';
 export const TTS = 'tts';
 
 const getUserPlan = (db, userId) => {
-    return db.prepare("SELECT * FROM UserPlan WHERE userId = ?").get(userId);
+    return db.prepare(`
+        SELECT p.* FROM Plan p
+        JOIN User u ON u.planId = p.id
+        WHERE u.id = ?
+    `).get(userId);
 };
 
 const getUserQuota = (db, userId, periodStart) => {
