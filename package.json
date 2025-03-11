@@ -6,7 +6,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "nodemon -e js,htm index.mjs",
+    "dev": "nodemon -r dotenv/config -e js,htm index.mjs",
     "start": "node index.mjs",
     "migrations": "node ops/migrations.mjs",
     "status": "node ops/status.mjs",
@@ -20,6 +20,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "openai": "^4.86.2",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {

@@ -108,6 +108,11 @@
                 📚
             </button>
 
+            <button type="button" v-if="el.elementType === elementFactory.usage"
+                class="pointer pa0 tc w2 h2 ma1 mr3 b--black bw1 br2 bg-white black" @click="explain(el)">
+                🦜
+            </button>
+
             <button type="button" v-if="el.elementType === elementFactory.ab"
                 class="pointer pa0 tc w2 h2 ma1 b--green bw1 br2 bg-white black" @click="addWord(el)">
                 +
@@ -277,6 +282,14 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div v-if="dialog === 'EXPLAIN'">
+        <dl>
+            <template v-for="item in explanation">
+                <dt>{{item.term}}</dt>
+                <dd>{{item.definition}}</dd>
+            </template>
+        </dl>
     </div>
 </div>
 

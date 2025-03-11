@@ -1,0 +1,1239 @@
+[
+    {
+        "id": "clgp0kg5b00003t5w7qmn19v5",
+        "elementType": "h1",
+        "order": 0,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0kg5b00013t5w99xouw5d",
+                "local": "Verbs",
+                "foreign": "",
+                "phrase": ""
+            }
+        ]
+    },
+    {
+        "id": "clgp0kg5b00023t5ww5xw6vlh",
+        "elementType": "gloss",
+        "order": 1,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0kg5b00033t5wet16c4uz",
+                "local": "Buy",
+                "foreign": "Mua",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0kz4h00043t5wlpyi2i82",
+        "elementType": "gloss",
+        "order": 2,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0kz4h00053t5wvafapfjv",
+                "local": "Sell",
+                "foreign": "Bán",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0l14x00063t5wqa5hy9j7",
+        "elementType": "gloss",
+        "order": 3,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0l14x00073t5wturfcv30",
+                "local": "See",
+                "foreign": "Thấy",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0l1mx00083t5wbtxn6nd7",
+        "elementType": "gloss",
+        "order": 4,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0l1mx00093t5weueov5ut",
+                "local": "Watch",
+                "foreign": "Xem",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0l227000a3t5wu1pv5s5c",
+        "elementType": "gloss",
+        "order": 5,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0l227000b3t5wsoi870n2",
+                "local": "Hear",
+                "foreign": "Nghe",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0l2gz000c3t5wjcrojql0",
+        "elementType": "gloss",
+        "order": 6,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0l2gz000d3t5wln8do8a2",
+                "local": "Listen",
+                "foreign": "Lắng nghe",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0l2xn000e3t5w65i94vf8",
+        "elementType": "gloss",
+        "order": 7,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0l2xn000f3t5wyvfykvw8",
+                "local": "Write ",
+                "foreign": "Viết",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0l70s000g3t5wugudy2im",
+        "elementType": "gloss",
+        "order": 8,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0l70s000h3t5wrgyi8mse",
+                "local": "Know",
+                "foreign": "Biết",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0l7fp000i3t5w4ri2a4pv",
+        "elementType": "gloss",
+        "order": 9,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0l7fp000j3t5wnfgupxt2",
+                "local": "Sing",
+                "foreign": "Hát",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0m3gn000k3t5w5huhcpyo",
+        "elementType": "gloss",
+        "order": 10,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0m3go000l3t5wfx4r5wfy",
+                "local": "Dance",
+                "foreign": "Múa",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0nuun000m3t5wu6ms45yk",
+        "elementType": "gloss",
+        "order": 11,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0nuun000n3t5waiyey6zv",
+                "local": "Sleep ",
+                "foreign": "Ngủ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0o8y1000o3t5wfd6gbh27",
+        "elementType": "gloss",
+        "order": 12,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0o8y1000p3t5wr627oylw",
+                "local": "Love",
+                "foreign": "Yêu",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0qdja000s3t5wh36s20gj",
+        "elementType": "gloss",
+        "order": 13,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0qdja000t3t5wsz0cz2ad",
+                "local": "Use",
+                "foreign": "Dùng",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0qlio000u3t5wfp4vmhwz",
+        "elementType": "gloss",
+        "order": 14,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0qlio000v3t5wktccdir5",
+                "local": "Give",
+                "foreign": "Cho",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0qul8000w3t5werkbi636",
+        "elementType": "gloss",
+        "order": 15,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0qul8000x3t5wxhfjp8r5",
+                "local": "Open",
+                "foreign": "Mở",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp15y9t00243t5web2xqmge",
+        "elementType": "gloss",
+        "order": 16,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp15y9u00253t5w6rmhui42",
+                "local": "Go",
+                "foreign": "Đi ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp168r5002a3t5wajb76ske",
+        "elementType": "gloss",
+        "order": 17,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp168r5002b3t5w56z9s0qw",
+                "local": "Walk",
+                "foreign": "Đi bộ ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1688f00283t5wwcczdfu0",
+        "elementType": "gloss",
+        "order": 18,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1688f00293t5ws1lcsl9m",
+                "local": "Search",
+                "foreign": "Tìm kiếm ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1668700263t5w488d8bcy",
+        "elementType": "gloss",
+        "order": 19,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1668700273t5wmi8d1u1g",
+                "local": "Find",
+                "foreign": "Tìm ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clk2jzogz00043n6io2gvieij",
+        "elementType": "gloss",
+        "order": 20,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2jzogz00053n6ihu6xo8vl",
+                "local": "Hug",
+                "foreign": "ôm",
+                "phrase": "",
+                "usages": [
+                    {
+                        "id": "clk2k04ym00073n6irnvnt8xh",
+                        "local": "I hug the dog",
+                        "foreign": "",
+                        "phrase": "Tôi ôm con chó"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "clk2k04ym00063n6ibim5wixl",
+        "elementType": "usage",
+        "order": 21,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2k04ym00073n6irnvnt8xh",
+                "local": "I hug the dog",
+                "foreign": "",
+                "phrase": "Tôi ôm con chó"
+            }
+        ]
+    },
+    {
+        "id": "clk2k1avw00083n6i3rpdxwwb",
+        "elementType": "gloss",
+        "order": 22,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2k1avw00093n6ivmotk7nu",
+                "local": "Agree",
+                "foreign": "Đồng ý",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clk2k309v000c3n6icn6cefjt",
+        "elementType": "gloss",
+        "order": 23,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2k309v000d3n6igt2yfqzp",
+                "local": "Challenge",
+                "foreign": "Thừ thách",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clk2qias700043n6jrpx5vvaq",
+        "elementType": "usage",
+        "order": 24,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2qias700053n6j94vvvxwl",
+                "local": "A new challenge",
+                "foreign": "",
+                "phrase": "Một thử thách mới"
+            }
+        ]
+    },
+    {
+        "id": "clk2k47qq000i3n6ietz9si2o",
+        "elementType": "gloss",
+        "order": 25,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2k47qq000j3n6ib0d5y5d1",
+                "local": "Distinguish",
+                "foreign": "Phân biẹt",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clk2k47e3000g3n6ipl2tnfjr",
+        "elementType": "gloss",
+        "order": 26,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2k47e3000h3n6ic2z09d7s",
+                "local": "Discuss",
+                "foreign": "Thảo luận",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clk2k472j000e3n6iqvrukh13",
+        "elementType": "gloss",
+        "order": 27,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2k472j000f3n6i1el6xqar",
+                "local": "Communicate",
+                "foreign": "Giao tiếp",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clk2kb0at000k3n6ixl9rqlk1",
+        "elementType": "gloss",
+        "order": 28,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2kb0at000l3n6ilkj7llc6",
+                "local": "Invent",
+                "foreign": "Phát minh",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clk2kcd9u000q3n6iumjxgnes",
+        "elementType": "gloss",
+        "order": 29,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2kcd9u000r3n6i9v0ddf5b",
+                "local": "Fail",
+                "foreign": "Thất bại",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clk2kcd42000o3n6iwx1k2nvl",
+        "elementType": "gloss",
+        "order": 30,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clk2kcd42000p3n6iopyjjtb2",
+                "local": "Exist",
+                "foreign": "Tồn tại",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0sdp7000y3t5wx587y4q0",
+        "elementType": "h1",
+        "order": 31,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0sdp8000z3t5wc10chfrh",
+                "local": "Colours",
+                "foreign": "",
+                "phrase": ""
+            }
+        ]
+    },
+    {
+        "id": "clgp0ssdj00123t5wbt9f7tbc",
+        "elementType": "gloss",
+        "order": 32,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0ssdj00133t5wx9jlox4b",
+                "local": "Colour",
+                "foreign": "Màu",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0sh4m00103t5wjpjopfr8",
+        "elementType": "gloss",
+        "order": 33,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0sh4m00113t5w4lakyki2",
+                "local": "Red",
+                "foreign": "Đỏ ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0st4m00143t5w35cy4dml",
+        "elementType": "gloss",
+        "order": 34,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0st4m00153t5wy3z934pn",
+                "local": "Black",
+                "foreign": "Đen",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0stqe00163t5wv813hrd2",
+        "elementType": "gloss",
+        "order": 35,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0stqe00173t5w3cjbinuz",
+                "local": "Orange",
+                "foreign": "Cam",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0suim00183t5w92qrncrb",
+        "elementType": "gloss",
+        "order": 36,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0suim00193t5wvx2yeudj",
+                "local": "White",
+                "foreign": "Trắng",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0svna001a3t5whpqshsg9",
+        "elementType": "gloss",
+        "order": 37,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0svnb001b3t5wzcuk25zl",
+                "local": "Brown",
+                "foreign": "Nâu",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0u28z001c3t5w88bdgud5",
+        "elementType": "gloss",
+        "order": 38,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0u28z001d3t5wl93s2d1a",
+                "local": "Grey",
+                "foreign": "Xám",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0u6z9001e3t5wmuv74gov",
+        "elementType": "gloss",
+        "order": 39,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0u6z9001f3t5wq4kkrjky",
+                "local": "Purple",
+                "foreign": "Tím",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0uuyw001g3t5wwi08uvwp",
+        "elementType": "gloss",
+        "order": 40,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0uuyw001h3t5wkvryh9n2",
+                "local": "Yellow",
+                "foreign": "Vàng ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0v27f001i3t5wolnbl9r1",
+        "elementType": "gloss",
+        "order": 41,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0v27f001j3t5wiq1uhs8k",
+                "local": "Pink",
+                "foreign": "Hồng",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0wi59001o3t5wf9lrsq5u",
+        "elementType": "gloss",
+        "order": 42,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0wi59001p3t5wxrzk6xcn",
+                "local": "Green leaf tree",
+                "foreign": "Xanh lá cây",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0wyki001q3t5wlm4o6sh2",
+        "elementType": "gloss",
+        "order": 43,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0wyki001r3t5wpnsk07cl",
+                "local": "Blue skin sky",
+                "foreign": "Xanh da trời ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0vmag001m3t5w8riaazae",
+        "elementType": "gloss",
+        "order": 44,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0vmag001n3t5w89g505dm",
+                "local": "Light suffix",
+                "foreign": "Nhạt",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp0vdsu001k3t5w70bnl0wl",
+        "elementType": "gloss",
+        "order": 45,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp0vdsu001l3t5wmb54ivym",
+                "local": "Deep/dark suf",
+                "foreign": "Dậm",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp13310001s3t5wu02qxc8c",
+        "elementType": "h1",
+        "order": 46,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp13311001t3t5wscoeryk2",
+                "local": "Q&A",
+                "foreign": "",
+                "phrase": ""
+            }
+        ]
+    },
+    {
+        "id": "clgp13cx3001u3t5w7wtdccmc",
+        "elementType": "gloss",
+        "order": 47,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp13cx3001v3t5w7jpqysi2",
+                "local": "To Ask",
+                "foreign": "Hỏi",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp13pms001w3t5w1lgvw0fk",
+        "elementType": "gloss",
+        "order": 48,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp13pms001x3t5ws991fp1t",
+                "local": "To Answer",
+                "foreign": "Trả lời ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp14cql001y3t5wolmpav3q",
+        "elementType": "gloss",
+        "order": 49,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp14cqm001z3t5w6o1s66gt",
+                "local": "Question",
+                "foreign": "Câu hỏi",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp14ovg00203t5wobsgrk3g",
+        "elementType": "gloss",
+        "order": 50,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp14ovg00213t5wsjnsntik",
+                "local": "Answer ",
+                "foreign": "Đáp án ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp157pi00223t5wpisvpl1a",
+        "elementType": "gloss",
+        "order": 51,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp157pj00233t5w30u3ompl",
+                "local": "Answer",
+                "foreign": "Câu trả lời ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp19v6y002c3t5w4iwidt4m",
+        "elementType": "h1",
+        "order": 52,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp19v6y002d3t5w1dfv5oit",
+                "local": "Adjectives ",
+                "foreign": "",
+                "phrase": ""
+            }
+        ]
+    },
+    {
+        "id": "clgp1afk2002g3t5w3hyutjmy",
+        "elementType": "gloss",
+        "order": 53,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1afk2002h3t5w1pb6ynpp",
+                "local": "Big",
+                "foreign": "Lớn ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1ag4l002i3t5wge6edtwd",
+        "elementType": "gloss",
+        "order": 54,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1ag4l002j3t5w91fx0q4i",
+                "local": "Small",
+                "foreign": "Nhỏ",
+                "phrase": "",
+                "usages": [
+                    {
+                        "id": "clgp1lp48003j3t5w55309jat",
+                        "local": "A small amount",
+                        "foreign": "",
+                        "phrase": "Một lượng nhỏ "
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "clgp1ai5y002k3t5wqhzxxn86",
+        "elementType": "gloss",
+        "order": 55,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1ai5y002l3t5wsbl4n5gx",
+                "local": "Right",
+                "foreign": "Đúng",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1akd7002m3t5we1k586ms",
+        "elementType": "gloss",
+        "order": 56,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1akd7002n3t5wimuevib9",
+                "local": "Wrong ",
+                "foreign": "Sai",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1aku5002o3t5w8v1v0qj8",
+        "elementType": "gloss",
+        "order": 57,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1aku5002p3t5wnsm96f3b",
+                "local": "Cheap",
+                "foreign": "Rẻ ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1g6cv003a3t5w8rma46xx",
+        "elementType": "gloss",
+        "order": 58,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1g6cv003b3t5wo42zuaoa",
+                "local": "Luxurious",
+                "foreign": "Xa xỉ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1bra0002q3t5wk77sl9ox",
+        "elementType": "gloss",
+        "order": 59,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1bra0002r3t5wfu8yfjzh",
+                "local": "Beautiful ",
+                "foreign": "Đẹp",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1brzh002s3t5wkz8zu7vl",
+        "elementType": "gloss",
+        "order": 60,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1brzh002t3t5w93i7qcbv",
+                "local": "Sad",
+                "foreign": "Buồn",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1buau002u3t5w6bpm3mkp",
+        "elementType": "gloss",
+        "order": 61,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1buau002v3t5ws78qjyav",
+                "local": "Modern",
+                "foreign": "Hiện đại ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1cr8j002w3t5wlf9e2ni5",
+        "elementType": "mnem",
+        "order": 62,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1cr8j002x3t5w539x3zg3",
+                "local": "",
+                "foreign": "",
+                "phrase": "My Hyundai is Hiện đại!"
+            }
+        ]
+    },
+    {
+        "id": "clgp1dfgs002y3t5w5rbp93l6",
+        "elementType": "gloss",
+        "order": 63,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1dfgs002z3t5wsteo9rx9",
+                "local": "Important",
+                "foreign": "Quan trọng ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1dsds00303t5w64t71jw7",
+        "elementType": "gloss",
+        "order": 64,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1dsds00313t5wkbaj3g44",
+                "local": "Simple",
+                "foreign": "Dơn giản",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1dtcg00323t5wsx1cs766",
+        "elementType": "gloss",
+        "order": 65,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1dtcg00333t5wvg2mut7r",
+                "local": "Complex ",
+                "foreign": "Phúc tập",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp19yfc002e3t5wxgh542rx",
+        "elementType": "gloss",
+        "order": 66,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp19yfc002f3t5w1d32ikx9",
+                "local": "Stubborn",
+                "foreign": "Bướng bỉnh",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1f3cy00343t5www7itb96",
+        "elementType": "gloss",
+        "order": 67,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1f3cy00353t5wc8ztjcoc",
+                "local": "Happy",
+                "foreign": "Hạnh phúc ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1f3vj00363t5wl1gwd412",
+        "elementType": "gloss",
+        "order": 68,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1f3vj00373t5w0dam6kx9",
+                "local": "Dangerous",
+                "foreign": "Nghiêm hiểm ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1fo9f00383t5w45jcd6pt",
+        "elementType": "gloss",
+        "order": 69,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1fo9g00393t5ww7uop38j",
+                "local": "Independent ",
+                "foreign": "Độc lập",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1hk5s003c3t5waju2mm36",
+        "elementType": "gloss",
+        "order": 70,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1hk5s003d3t5winzwprub",
+                "local": "Traditional",
+                "foreign": "Truyền thống ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1ku5v003e3t5wi9ocl0x9",
+        "elementType": "h1",
+        "order": 71,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1ku5x003f3t5w4rgqj5ww",
+                "local": "Useful",
+                "foreign": "",
+                "phrase": ""
+            }
+        ]
+    },
+    {
+        "id": "clgp1m7o9003k3t5wbs4u8rgu",
+        "elementType": "gloss",
+        "order": 72,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1m7o9003l3t5wt7pgdoan",
+                "local": "Little bit",
+                "foreign": "Chút ",
+                "phrase": "",
+                "usages": [
+                    {
+                        "id": "clgp1mfoj003n3t5wec2kjldl",
+                        "local": "Only a little",
+                        "foreign": "",
+                        "phrase": "Chỉ một chút "
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "clgp1n4yu003q3t5wp29ek6af",
+        "elementType": "gloss",
+        "order": 73,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1n4yu003r3t5wmfnldah9",
+                "local": "Much",
+                "foreign": "Nhiều ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1mfoj003m3t5w24fhgvrw",
+        "elementType": "usage",
+        "order": 74,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1mfoj003n3t5wec2kjldl",
+                "local": "Only a little",
+                "foreign": "",
+                "phrase": "Chỉ một chút "
+            }
+        ]
+    },
+    {
+        "id": "clgp1lp48003i3t5wiar0j18r",
+        "elementType": "usage",
+        "order": 75,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1lp48003j3t5w55309jat",
+                "local": "A small amount",
+                "foreign": "",
+                "phrase": "Một lượng nhỏ "
+            }
+        ]
+    },
+    {
+        "id": "clgp1nlu6003s3t5wfhbz3x6i",
+        "elementType": "usage",
+        "order": 76,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1nlu6003t3t5w3t9ya1xp",
+                "local": "How much?",
+                "foreign": "",
+                "phrase": "Bao nhiêu "
+            }
+        ]
+    },
+    {
+        "id": "clgp1o3b1003u3t5wo1cuc9ja",
+        "elementType": "h1",
+        "order": 77,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1o3b1003v3t5wp9po8bz6",
+                "local": "Allergy",
+                "foreign": "",
+                "phrase": ""
+            }
+        ]
+    },
+    {
+        "id": "clgp1o6e3003w3t5wv09iye6u",
+        "elementType": "gloss",
+        "order": 78,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1o6e3003x3t5w5fs8nu2k",
+                "local": "Peanut",
+                "foreign": "Dậu phộng",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1ouq3003y3t5waicb41h8",
+        "elementType": "usage",
+        "order": 79,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1ouq3003z3t5wz1k8bwa8",
+                "local": "I don’t eat peanut",
+                "foreign": "",
+                "phrase": "Tôi không ăn đậu phộng "
+            }
+        ]
+    },
+    {
+        "id": "clgp1q5y800423t5wu7pl6zej",
+        "elementType": "gloss",
+        "order": 80,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1q5y900433t5wyidxzrvg",
+                "local": "Allergy",
+                "foreign": "Dị ứng ",
+                "phrase": "",
+                "usages": []
+            }
+        ]
+    },
+    {
+        "id": "clgp1pshg00403t5wxmd06a3l",
+        "elementType": "usage",
+        "order": 81,
+        "alignment": 0,
+        "words": [
+            {
+                "id": "clgp1pshg00413t5w40hh0qbr",
+                "local": "I’m allergic to peanut",
+                "foreign": "",
+                "phrase": "Tôi bị dị ửng với đậu phộng "
+            }
+        ]
+    }
+]

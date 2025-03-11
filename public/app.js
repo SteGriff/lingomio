@@ -62,6 +62,7 @@ PetiteVue.createApp({
   userModel: null,
   username: '',
   password: '',
+  explanation: null,
   async mounted() {
     console.log("mounted");
     window.addEventListener('keydown', (e) => {
@@ -194,6 +195,24 @@ PetiteVue.createApp({
     const swapElement = this.currentBook.elements.find((e) => e.order === newOrder);
     if (swapElement) swapElement.order -= 1;
     element.order = newOrder;
+  },
+  explain(element) {
+    // Call the explain api on el.words[0].phrase
+    const text = element.words[0].phrase;
+    console.log("explain", text);
+    fetch("/api/explain", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ text })
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log("explained", json);
+        this.explanation = json.model;
+        this.dialog = "EXPLAIN";
+      });
   },
   blur() {
     this.save();

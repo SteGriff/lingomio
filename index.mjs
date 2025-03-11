@@ -11,6 +11,7 @@ import { getSuccess, getError, isSuccess } from "./results.mjs";
 import { createOrUpdateBook, getBook, getBooks } from "./logic/books.mjs";
 import { LLM, TTS, checkAndIncreaseUsage } from "./logic/quota.mjs";
 import { explain } from "./logic/explain/explain.mjs";
+import { getUserQuota } from "./logic/quota.mjs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -119,6 +120,18 @@ app.get("/api", async (_, res) => {
 
 app.get("/api/user", auth, async (req, res) => {
   return res.json(getSuccess(req.session.user));
+});
+
+app.get("/api/quota", auth, async (req, res) => {
+  const userId = req.session.user.id;
+  const periodStart = getCurrentPeriodStart(db);
+  const userQuota = getUserQuota(db, userId, periodStart);
+
+  if (!userQuota) {
+    return res.status(404).json(getError("Quota not found"));
+  }
+
+  return res.json(getSuccess(userQuota));
 });
 
 app.post("/api/register", async (req, res) => {

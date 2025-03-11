@@ -9,7 +9,7 @@ const getUserPlan = (db, userId) => {
     `).get(userId);
 };
 
-const getUserQuota = (db, userId, periodStart) => {
+export const getUserQuota = (db, userId, periodStart) => {
     return db.prepare("SELECT * FROM UserQuota WHERE userId = ? AND periodStart = ?").get(userId, periodStart);
 };
 
@@ -18,7 +18,7 @@ const createUserQuota = (db, userId, periodStart, llmQuota, ttsQuota) => {
         .run(userId, periodStart, llmQuota, ttsQuota);
 };
 
-const getCurrentPeriodStart = (db) => {
+export const getCurrentPeriodStart = (db) => {
     return db.prepare("SELECT unixepoch(date('now', 'start of month')) AS periodStart").get().periodStart;
 };
 
