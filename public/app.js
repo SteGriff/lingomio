@@ -370,7 +370,7 @@
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ text })
+        body: JSON.stringify({ text, learningLanguage: this.currentBook.learningLanguage })
       }).then((response) => response.json()).then((json) => {
         console.log("explained", json);
         this.explanation = json.model;

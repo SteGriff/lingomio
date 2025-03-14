@@ -195,11 +195,10 @@ app.post("/api/explain", auth, async (req, res) => {
   if (!checkAndIncreaseUsage(db, userId, LLM)) {
     return res.status(403).send(getError("Quota exceeded"));
   }
-
-  const { text } = req.body;
-  // TODO: Use language from book.learningLanguage
-  const language = null; //"Vietnamese";
-  const explanation = await explain(language, text);
+  const text = req.body.text;
+  const languageCode = req.body.learningLanguage;
+  console.log("explain", req.body, languageCode, text);
+  const explanation = await explain(languageCode, text);
 
   const response = getSuccess(explanation);
   return res.json(response);

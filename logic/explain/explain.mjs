@@ -1,9 +1,16 @@
 import OpenAI from 'openai';
 import { responseFormat } from './responseFormat.mjs';
+import ISO6391 from 'iso-639-1';
 
 const openai = new OpenAI(); // key defaults to process.env["OPENAI_API_KEY"]
 
-export const explain = async (languageName, phrase) => {
+const languageCodeToName = (code) => {
+    // use iso-639-1 to get the language name from the code
+    return ISO6391.getName(code);
+}
+
+export const explain = async (languageCode, phrase) => {
+    const languageName = languageCodeToName(languageCode);
     const devPrompt = languageName
         ? `Explain the ${languageName} sentence word-by-word`
         : `Explain this sentence word-by-word. BE CONCISE.`;

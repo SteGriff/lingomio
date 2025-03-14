@@ -8,7 +8,7 @@
   "scripts": {
     "build-ui": "esbuild ui/app.mjs --bundle --outfile=public/app.js",
     "dev-ui": "esbuild ui/app.mjs --bundle --outfile=public/app.js --watch",
-    "dev-server": "nodemon -r dotenv/config -e js,htm index.mjs",
+    "dev-server": "nodemon -r dotenv/config -e js,htm,mjs index.mjs",
     "dev": "concurrently \"npm run dev-ui\" \"npm run dev-server\"",
     "start": "node index.mjs",
     "migrations": "node ops/migrations.mjs",
@@ -24,6 +24,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "iso-639-1": "^3.1.5",
     "openai": "^4.86.2",
     "zxcvbn": "^4.4.2"
   },

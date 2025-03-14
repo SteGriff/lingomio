@@ -28,7 +28,9 @@
         <hr />
         <p class="b">
             <a class="pointer" @click="dialog = 'RENAME'">
-                {{ currentBook.name }} 🖍
+                {{ currentBook.name }}
+                <span class="br2 bg-gray pa1 mh1 normal f6">{{currentBook.learningLanguage}}</span>
+                🖍
             </a>
         </p>
         <p>
@@ -266,13 +268,13 @@
     <div v-if="dialog === 'RENAME'">
         <div class="pv1">
             <form @submit.prevent="saveName()">
-                <label>
+                <label class="db pv1">
                     Book name:
                     <input name="name" type="text" placeholder="Book name" v-model="currentBook.name"
                         class="pa2 f4 mh1 mh2-ns w-40 minw4">
                 </label>
-                <label>
-                    Learning Language:
+                <label class="db pv1">
+                    Learning:
                     <input name="learningLanguage" type="text" placeholder="Learning Language"
                         v-model="currentBook.learningLanguage" class="pa2 f4 mh1 mh2-ns w-40 minw4">
                 </label>
