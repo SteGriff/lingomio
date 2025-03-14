@@ -179,7 +179,9 @@ app.post("/api/book/:cuid", auth, async (req, res) => {
     bookCuid,
     req.body.name,
     userId,
-    req.body.elements
+    req.body.elements,
+    req.body.knownLanguage,
+    req.body.learningLanguage
   );
   return res.json(result);
 });

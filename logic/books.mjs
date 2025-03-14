@@ -1,18 +1,18 @@
 import { getSuccess } from "../results.mjs";
 import { EVT_BOOK_CREATE, EVT_BOOK_UPDATE, writeLog } from "./logging.mjs";
 
-export const createOrUpdateBook = (db, cuid, name, ownerId, elementsJson) => {
+export const createOrUpdateBook = (db, cuid, name, ownerId, elementsJson, knownLanguage, learningLanguage) => {
   //console.log("createOrUpdateBook req", cuid, name)
   const existingBook = getBookByCuid(db, cuid, ownerId);
 
   const elementsJsonString = JSON.stringify(elementsJson);
 
   if (existingBook) {
-    updateBook(db, cuid, name, ownerId, elementsJsonString);
+    updateBook(db, cuid, name, ownerId, elementsJsonString, knownLanguage, learningLanguage);
     writeLog(db, EVT_BOOK_UPDATE, cuid, name);
   }
   else {
-    insertBook(db, cuid, name, ownerId, elementsJsonString);
+    insertBook(db, cuid, name, ownerId, elementsJsonString, knownLanguage, learningLanguage);
     writeLog(db, EVT_BOOK_CREATE, cuid, name);
   }
 
@@ -35,25 +35,27 @@ const getBookByCuid = (db, cuid, ownerId) => {
     .get(cuid, ownerId);
 }
 
-const insertBook = (db, cuid, name, ownerId, elementsJson) => {
+const insertBook = (db, cuid, name, ownerId, elementsJson, knownLanguage, learningLanguage) => {
   const dbResult = db.prepare(
     `insert into [Book] 
-    (cuid, name, ownerId, updated, elementsJson) 
-    values (?, ?, ?, unixepoch(), ?)`
+    (cuid, name, ownerId, updated, elementsJson, knownLanguage, learningLanguage) 
+    values (?, ?, ?, unixepoch(), ?, ?, ?)`
   )
-    .run(cuid, name, ownerId, elementsJson);
+    .run(cuid, name, ownerId, elementsJson, knownLanguage, learningLanguage);
   return dbResult.changes > 0;
 };
 
-const updateBook = (db, cuid, name, ownerId, elementsJson) => {
+const updateBook = (db, cuid, name, ownerId, elementsJson, knownLanguage, learningLanguage) => {
   const dbResult = db.prepare(
     `update [Book] set 
     name = ?,
     elementsJson = ?,
-    updated = unixepoch()
+    updated = unixepoch(),
+    knownLanguage = ?,
+    learningLanguage = ?
     where cuid = ? and ownerId = ?`
   )
-    .run(name, elementsJson, cuid, ownerId);
+    .run(name, elementsJson, knownLanguage, learningLanguage, cuid, ownerId);
   return dbResult.changes > 0;
 };
 

@@ -16,7 +16,9 @@ const newBook = () => {
   return {
     name: nameFactory.nameForA("book"),
     cuid: cuid(),
-    elements: elementFactory.initElements()
+    elements: elementFactory.initElements(),
+    knownLanguage: 'en',
+    learningLanguage: 'es'
   };
 };
 const timeSince = (uts) => {

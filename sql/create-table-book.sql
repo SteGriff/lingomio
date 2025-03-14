@@ -7,5 +7,7 @@ create table [Book]
   [ownerId] int not null,
   [privacy] int not null default 0,
   [updated] int,  -- unixepoch
-  [elementsJson] text null
+  [elementsJson] text null,
+  [knownLanguage] text not null default 'en',
+  [learningLanguage] text not null default 'es'
 );
