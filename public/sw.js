@@ -1,17 +1,15 @@
 
 const version = 'v2';
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
   console.log("Install", version);
   event.waitUntil(
-    caches.open(version).then(function(cache) {
+    caches.open(version).then(function (cache) {
       return cache.addAll([
         'index.htm',
         'tachyons.css',
         'petite-vue.js',
-        'elements.js',
-        'cuid.js',
-        'names.js',
+        'app.js',
         'icon.png',
         'notfound.txt'
       ]);
@@ -19,8 +17,8 @@ self.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(caches.match(event.request).then(function(response) {
+self.addEventListener('fetch', function (event) {
+  event.respondWith(caches.match(event.request).then(function (response) {
     // caches.match() always resolves
     // but in case of success response will have value
     if (response !== undefined) {

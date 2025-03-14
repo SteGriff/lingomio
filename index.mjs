@@ -174,14 +174,16 @@ app.post("/api/book/:cuid", auth, async (req, res) => {
   const bookCuid = req.params.cuid;
   const userId = req.session.user.id;
   console.log("POST book", bookCuid)
+  const knownLanguage = req.body.knownLanguage ?? "en";
+  const learningLanguage = req.body.learningLanguage ?? "es";
   const result = createOrUpdateBook(
     db,
     bookCuid,
     req.body.name,
     userId,
     req.body.elements,
-    req.body.knownLanguage,
-    req.body.learningLanguage
+    knownLanguage,
+    learningLanguage
   );
   return res.json(result);
 });

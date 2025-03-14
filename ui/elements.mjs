@@ -1,4 +1,6 @@
-var ElementFactory = function () {
+import cuid from "cuid";
+
+export const ElementFactory = function () {
     this.ab = "ab";
     this.gloss = "gloss";
     this.mnem = "mnem";
