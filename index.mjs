@@ -197,9 +197,10 @@ app.post("/api/explain", auth, async (req, res) => {
   }
   const text = req.body.text;
   const languageCode = req.body.learningLanguage;
-  console.log("explain", req.body, languageCode, text);
-  const explanation = await explain(languageCode, text);
+  const apiName = process.env.LLM;
 
+  console.log("explain", apiName, languageCode, text);
+  const explanation = await explain(text, apiName);
   const response = getSuccess(explanation);
   return res.json(response);
 });

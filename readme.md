@@ -26,6 +26,16 @@ Jumping back in:
  + Register at <http://localhost:1954/register>
  + Visit app at root URL <http://localhost:1954/>
 
+Env values to define:
+
+```
+PORT=3000
+SESSION_SECRET=
+OPENAI_API_KEY=sk-xxxx
+DEEPSEEK_API_KEY=sk-yyyy
+LLM=openai
+```
+
 Docs:
 
  + <https://www.npmjs.com/package/better-sqlite3>

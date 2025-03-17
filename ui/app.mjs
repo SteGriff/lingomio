@@ -48,6 +48,7 @@ PetiteVue.createApp({
   username: '',
   password: '',
   explanation: null,
+  explaining: false,
   elementFactory,
   nameFactory,
   async mounted() {
@@ -183,23 +184,43 @@ PetiteVue.createApp({
     if (swapElement) swapElement.order -= 1;
     element.order = newOrder;
   },
-  explain(element) {
-    // Call the explain api on el.words[0].phrase
-    const text = element.words[0].phrase;
-    console.log("explain", text);
-    fetch("/api/explain", {
+  async explain(element) {
+    if (element.words[0].explanation) {
+      this.explanation = element.words[0].explanation;
+      this.dialog = "EXPLAIN";
+      return;
+    }
+
+    this.explaining = true;
+    const data = {
+      text: element.words[0].phrase,
+      learningLanguage: this.currentBook.learningLanguage
+    };
+    const url = "/api/explain/";
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ text, learningLanguage: this.currentBook.learningLanguage })
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log("explained", json);
-        this.explanation = json.model;
-        this.dialog = "EXPLAIN";
-      });
+      body: JSON.stringify(data)
+    });
+    this.explaining = false;
+    if (response.status === 401) {
+      this.setUser(null);
+      return;
+    }
+    if (response.status === 403) {
+      this.message = json.message;
+      return;
+    }
+    const json = await response.json();
+    if (json.status !== "OK")
+      this.message = json.message;
+
+    console.log("explained", json);
+    this.explanation = json.model;
+    element.words[0].explanation = json.model;
+    this.dialog = "EXPLAIN";
   },
   blur() {
     this.save();
@@ -276,6 +297,7 @@ PetiteVue.createApp({
       this.username = '';
       this.password = '';
       this.message = null;
+      this.menu = false;
     }
     else {
       this.message = json.message;

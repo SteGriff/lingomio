@@ -1,4 +1,4 @@
-export const responseFormat = {
+export const explanationJsonSchema = {
   "type": "json_schema",
   "json_schema": {
     "name": "explanation",

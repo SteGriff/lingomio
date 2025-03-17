@@ -10,7 +10,11 @@
             </button>
         </div>
         <h1 class="f5 b">Lingomio</h1>
-        <p v-if="userModel" class="f6 mh3">{{ currentBook.name }}</p>
+        <p v-if="userModel" class="f6 mh3">
+            <a class="pointer" @click="booksDialog()">
+                {{ currentBook.name }}
+            </a>
+        </p>
     </div>
     <nav v-if="menu" class="fixed bg-black white left-0 right-0 top-0 bottom-0 mw6-ns pa3">
         <div class="flex w-100 center">
@@ -112,7 +116,7 @@
 
             <button type="button" v-if="el.elementType === elementFactory.usage"
                 class="pointer pa0 tc w2 h2 ma1 mr3 b--black bw1 br2 bg-white black" @click="explain(el)">
-                🦜
+                {{ explaining ? "🤔" : "🦜" }}
             </button>
 
             <button type="button" v-if="el.elementType === elementFactory.ab"

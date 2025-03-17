@@ -13,6 +13,7 @@
     "start": "node index.mjs",
     "migrations": "node ops/migrations.mjs",
     "status": "node ops/status.mjs",
+    "schema": "node ops/schemaBuild.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ste Griffiths",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "concurrently": "^9.1.2",
     "esbuild": "0.25.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "zod": "^3.24.2"
   }
 }

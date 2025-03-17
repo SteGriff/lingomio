@@ -7,3 +7,4 @@ export const EVT_LOGIN = "LOGIN";
 export const EVT_REGISTER = "REGISTER";
 export const EVT_BOOK_CREATE = "BOOKCREATE";
 export const EVT_BOOK_UPDATE = "BOOKUPDATE";
+export const EVT_LLM_EXPLAIN = "LLMEXPLAIN";
