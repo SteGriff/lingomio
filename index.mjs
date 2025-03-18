@@ -173,7 +173,7 @@ app.get("/api/book/:cuid", auth, async (req, res) => {
 app.post("/api/book/:cuid", auth, async (req, res) => {
   const bookCuid = req.params.cuid;
   const userId = req.session.user.id;
-  console.log("POST book", bookCuid)
+  console.log("POST book", bookCuid, userId)
   const knownLanguage = req.body.knownLanguage ?? "en";
   const learningLanguage = req.body.learningLanguage ?? "es";
   const result = createOrUpdateBook(

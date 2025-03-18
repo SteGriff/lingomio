@@ -180,9 +180,9 @@
 <div v-if="dialog" @click="dialog=null" class="overlay z-2 bg-dark-gray o-70 fixed absolute--fill"></div>
 
 <!-- Overlay contents -->
-<div v-if="dialog" class="z-3 fixed top-1 left-1 right-1 ma1 pa2 black ba b--black bw2 bg-white">
+<div v-if="dialog" class="z-3 fixed top-1 left-1 right-1 ma1 pa2 pa3-ns black ba b--black bw2 bg-white">
     <div class="flex justify-between mb3">
-        <div class="f3">{{dialog}}</div>
+        <div class="f3 mt1">{{dialog}}</div>
         <div class="z-3 f3 mr2 pointer" @click="dialog = null">&times;</div>
     </div>
     <div v-if="dialog === 'LOGIN'">
@@ -241,19 +241,21 @@
             @click="copyJson()">
             {{ copied === 'JSON' ? "✔" : "💾" }} Copy JSON
         </button>
+        <textarea class="w-100 minh4 code f6" v-if="copied === false">{{ pasteFailContent }}</textarea>
     </div>
     <div v-if="dialog === 'IMPORT'" class="center">
-        <button type="button" v-if="!importing" class="pointer db pa2 ma1 center b--black bw1 br2 bg-white black minw4"
-            @click="importing = true">
-            📁 Import JSON
-        </button>
-        <button type="button" v-else class="pointer db pa2 ma1 center b--black bw1 br2 bg-white black minw4"
-            @click="load()">
-            ✅ Load it!
-        </button>
-        <textarea class="w-100 mt3 minh4 code f6" v-if="copied === false">
-                {{ pasteFailContent }}</textarea>
-        <textarea class="w-100 mt3 minh4 code f6" v-if="importing" v-model="importContent"></textarea>
+        <p class="mv3">Paste JSON from Lingomio or Langpad here:</p>
+        <textarea class="w-100 minh4 code f6" v-model="importContent"></textarea>
+        <div class="dt mt2 center">
+            <button type="button" v-else class="dtc pointer pa2 mh3 b--black bw1 br2 bg-white black minw4"
+                @click="load(true)">
+                📜 Overwrite this book
+            </button>
+            <button type="button" v-else class="dtc pointer pa2 mh3 b--black bw1 br2 bg-white black minw4"
+                @click="load(false)">
+                📃 Create new book
+            </button>
+        </div>
     </div>
     <div v-if="dialog === 'BOOKS'" class="center measure">
         <div v-if="userModel">

@@ -71,9 +71,8 @@ const getBooksForUser = (db, userId, metadataOnly) => {
 const setUserBook = (db, userId, cuid) => {
   const dbResult = db.prepare(
     `update [User] set 
-    currentBook = ?,
-    id = ?`
-  )
-    .run(cuid, userId);
+    currentBook = ?
+    where id = ?`
+  ).run(cuid, userId);
   return dbResult.changes > 0;
 };

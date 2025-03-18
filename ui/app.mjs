@@ -42,7 +42,6 @@ PetiteVue.createApp({
   addToolLocation: null,
   sortLocal: false,
   pasteFailContent: "",
-  importing: false,
   importContent: "",
   userModel: null,
   username: '',
@@ -75,12 +74,20 @@ PetiteVue.createApp({
     return max;
   },
   nextOrdinal() {
+    if (!this.currentBook.elements?.length) this.bookBroken();
     const max = Math.max(...this.currentBook.elements.map((e) => e.order)) || 0;
     console.log("nextOrdinal", max + 1);
     return max + 1;
   },
   orderedElements() {
+    console.log("orderedElements", this.currentBook.elements?.length)
+    if (!this.currentBook.elements?.length) this.bookBroken();
     return this.currentBook.elements.sort((a, b) => a.order - b.order);
+  },
+  bookBroken() {
+    console.log("bookBroken");
+    this.toast("This book is broken - paste a valid JSON book, or load another.");
+    this.dialog = "IMPORT";
   },
   allVocab() {
     const all = [...this.currentBook.elements].flatMap((e) => e.words);
@@ -272,10 +279,16 @@ PetiteVue.createApp({
     const json = JSON.stringify(this.currentBook.elements);
     this.copy(json, "JSON");
   },
-  load() {
+  load(overwrite) {
+    if (!overwrite) {
+      // Save the current book, get a new one, 
+      this.save();
+      this.currentBook = newBook();
+    }
+    // Overwrite current book (or new one we just made), and save to server
     this.currentBook.elements = JSON.parse(this.importContent);
-    this.importing = false;
     this.importContent = "";
+    this.save();
   },
   toast(msg) {
     this.message = msg;

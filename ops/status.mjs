@@ -13,7 +13,7 @@ const db = new Database(".data/app.db");
 db.pragma("journal_mode = WAL");
 
 console.log("USERS");
-db.prepare("select Username, Active from [User]").all().forEach((r) => {
+db.prepare("select ID, Username, Active from [User]").all().forEach((r) => {
   console.log(r);
 });
 
