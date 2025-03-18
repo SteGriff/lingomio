@@ -22,7 +22,7 @@ Jumping back in:
 
  + 💿 No DB? Run first time DB setup scripts: `npm run migrations`
  + 🧨 Old data? Clear down everything with the same command!
- + 🚦 `npm run dev`
+ + 🚦 Split terminal and `npm run dev-ui` in one, `npm run dev-server` in the other
  + Register at <http://localhost:1954/register>
  + Visit app at root URL <http://localhost:1954/>
 

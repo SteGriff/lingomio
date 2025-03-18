@@ -44,7 +44,9 @@
             <a class="pointer" @click="startNew()">✨ New Book</a>
         </p>
         <hr />
-        <p>📤 <a class="pointer" @click="dialog = 'EXPORT'">Export/Import</a>
+        <p>📤 <a class="pointer" @click="dialog = 'EXPORT'">Export</a>
+        </p>
+        <p>📥 <a class="pointer" @click="dialog = 'IMPORT'">Import</a>
         </p>
         <p>👩‍🏫 <a class="pointer" @click="dialog = 'VOCAB'">Vocab</a>
         </p>
@@ -239,6 +241,8 @@
             @click="copyJson()">
             {{ copied === 'JSON' ? "✔" : "💾" }} Copy JSON
         </button>
+    </div>
+    <div v-if="dialog === 'IMPORT'" class="center">
         <button type="button" v-if="!importing" class="pointer db pa2 ma1 center b--black bw1 br2 bg-white black minw4"
             @click="importing = true">
             📁 Import JSON

@@ -1,12 +1,34 @@
-<h1>Register</h1>
-<form action="/register" method="POST">
-    <label>Username:<input name="username" type="text" placeholder="Username"></label>
-    <label>Email:<input name="email" type="email" placeholder="Email address"></label>
-    <label>Password:<input name="password" type="password" placeholder="Password"></label>
-    <button type="submit">Register</button>
-</form>
-<p v-if="data?.message">{{data.message}}</p>
-<p v-if="data?.model">Strength: {{data.model?.score}}/5 (must be 3 or more)</p>
+<div class="center mw6">
+    <img src="icon.png" alt="Lingomio" class="db w4 h4 br4 center mt4 mb3">
+    <h1 class="tc">Lingomio</h1>
+    <h2 class="tc">Create an account</h2>
+    <form action="/register" method="POST">
+        <div class="pv1 dt">
+            <label for="username" class="dtc w4 tr">Username:</label>
+            <input name="username" type="text" placeholder="Username" class="dtc pa2 f4 mh1 mh2-ns minw4">
+        </div>
+        <div class="pv1 dt">
+            <label for="email" class="dtc w4 tr">Email:</label>
+            <input name="email" type="email" placeholder="Email Address" class="dtc pa2 f4 mh1 mh2-ns minw4">
+        </div>
+        <div class="pv1 dt">
+            <label for="password" class="dtc w4 tr">Password:</label>
+            <input name="password" type="password" placeholder="Password" class="dtc pa2 f4 mh1 mh2-ns minw4">
+        </div>
+        <div class="mt3 dt center">
+            <button type="submit" class="dtc pointer pa1 ma1 b--black bw1 br2 bg-white black minw4 b">
+                Register
+            </button>
+            <span class="dtc pv1 ph3">
+                <a href="/">Back</a>
+            </span>
+        </div>
+        <div class="mv2">
+            <p v-if="data?.message" class="b">{{data.message}}</p>
+            <p v-if="data?.model">Password strength: {{data.model?.score}}/5 (must be 3 or more)</p>
+        </div>
+    </form>
+</div>
 <script>
     PetiteVue
         .createApp({

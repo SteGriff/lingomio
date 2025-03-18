@@ -484,6 +484,7 @@
       if (model) {
         this.dialog = null;
         this.getBooksList();
+        this.save();
       } else
         this.toast("Log in to sync data");
     },

@@ -309,7 +309,7 @@ PetiteVue.createApp({
       method: "POST"
     });
     this.userModel = null;
-    // Clear all books/data?
+    // TODO - Clear all books/data?
   },
   setUser(model) {
     console.log("setUser", model);
@@ -317,7 +317,7 @@ PetiteVue.createApp({
     if (model) {
       this.dialog = null;
       this.getBooksList();
-      // TODO Load current book
+      this.save(); // Newly reg user - save their book
     }
     else
       this.toast("Log in to sync data");
