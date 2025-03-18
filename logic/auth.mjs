@@ -64,11 +64,19 @@ export const authenticateUser = async (db, username, password) => {
   return getSuccess(maskUser(user));
 };
 
+const isEmail = (email) => {
+  var emailFormat = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  return email !== '' && email.match(emailFormat);
+}
+
 // Create user - returns common result type
 export const createUser = async (db, userModel) => {
   // Preconditions
   if (!userModel.username || !userModel.password)
-    return getError("Missing username or password param");
+    return getError("Missing username or password");
+
+  if (!isEmail(userModel.email))
+    return getError("Invalid email address");
 
   // If user exists, quit
   const user = getUser(db, userModel.username);

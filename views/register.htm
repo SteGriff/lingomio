@@ -15,24 +15,24 @@
             <label for="password" class="dtc w4 tr">Password:</label>
             <input name="password" type="password" placeholder="Password" class="dtc pa2 f4 mh1 mh2-ns minw4">
         </div>
+        <div v-if="data?.message" class="mv3 tc bg-pink pa2 br2">
+            <p class="ma0">{{data.message}}</p>
+            <p class="ma0 mt2" v-if="data?.model">Strength: {{data.model?.score}}/5 (must be 3 or more)</p>
+        </div>
         <div class="mt3 dt center">
-            <button type="submit" class="dtc pointer pa1 ma1 b--black bw1 br2 bg-white black minw4 b">
+            <button type="submit" class="dtc pointer pv2 ph3 ma1 b--black bw1 br2 bg-white black minw4 b">
                 Register
             </button>
             <span class="dtc pv1 ph3">
                 <a href="/">Back</a>
             </span>
         </div>
-        <div class="mv2">
-            <p v-if="data?.message" class="b">{{data.message}}</p>
-            <p v-if="data?.model">Password strength: {{data.model?.score}}/5 (must be 3 or more)</p>
-        </div>
     </form>
 </div>
 <script>
     PetiteVue
         .createApp({
-            data: window.serverData
+            data: _STE_DATA
         })
         .mount();
 </script>
