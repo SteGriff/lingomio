@@ -187,19 +187,13 @@
     </div>
     <div v-if="dialog === 'LOGIN'">
         <form @submit.prevent="login()">
-            <div class="pv1">
-                <label>
-                    Username:
-                    <input name="username" type="text" placeholder="Username" v-model="username"
-                        class="pa2 f4 mh1 mh2-ns w-40 minw4">
-                </label>
+            <div class="pv1 dt">
+                <label for="username" class="dtc w4 tr">Username:</label>
+                <input name="username" type="text" placeholder="Username" class="dtc pa2 f4 mh1 mh2-ns minw4">
             </div>
-            <div class="pv1">
-                <label>
-                    Password:
-                    <input name="password" type="password" placeholder="Password" v-model="password"
-                        class="pa2 f4 mh1 mh2-ns w-40 minw4">
-                </label>
+            <div class="pv1 dt">
+                <label for="password" class="dtc w4 tr">Password:</label>
+                <input name="password" type="password" placeholder="Password" class="dtc pa2 f4 mh1 mh2-ns minw4">
             </div>
             <div class="mv2">
                 <p v-if="message" class="mv2">{{message}}</p>
