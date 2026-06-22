@@ -12,6 +12,7 @@ import { createOrUpdateBook, getBook, getBooks } from "./logic/books.mjs";
 import { LLM, TTS, checkAndIncreaseUsage } from "./logic/quota.mjs";
 import { explain } from "./logic/explain/explain.mjs";
 import { getUserQuota } from "./logic/quota.mjs";
+import { normalizePhrase, getCachedExplanation, cacheExplanation } from "./logic/explain/cache.mjs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -192,15 +193,31 @@ app.post("/api/book/:cuid", auth, async (req, res) => {
 app.post("/api/explain", auth, async (req, res) => {
   const userId = req.session.user.id;
 
-  if (!checkAndIncreaseUsage(db, userId, LLM)) {
-    return res.status(403).send(getError("Quota exceeded"));
-  }
   const text = req.body.text;
   const languageCode = req.body.learningLanguage;
   const apiName = process.env.LLM;
 
+  // Normalize the phrase
+  const normalizedPhrase = normalizePhrase(text);
+
+  // Check the DB cache for an existing explanation
+  const cachedExplanation = getCachedExplanation(db, normalizedPhrase);
+  if (cachedExplanation) {
+    return res.json(getSuccess(cachedExplanation));
+  }
+
+  // If not found, continue to look up using LLM
+  // increase usage, and store the result in the DB
+  if (!checkAndIncreaseUsage(db, userId, LLM)) {
+    return res.status(403).send(getError("Quota exceeded"));
+  }
+
   console.log("explain", apiName, languageCode, text);
   const explanation = await explain(text, apiName);
+
+  // Cache the explanation
+  cacheExplanation(db, normalizedPhrase, explanation);
+
   const response = getSuccess(explanation);
   return res.json(response);
 });

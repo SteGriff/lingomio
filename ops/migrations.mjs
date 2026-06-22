@@ -18,7 +18,8 @@ const scripts = [
   "create-table-user.sql",
   "create-table-user-quota.sql",
   "create-table-logging.sql",
-  "create-table-book.sql"
+  "create-table-book.sql",
+  "create-table-phrase-cache.sql"
 ];
 
 scripts.forEach(async (sf) => {
