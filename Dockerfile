@@ -1,10 +1,4 @@
-# syntax = docker/dockerfile:1
-
-# Adjust NODE_VERSION as desired
-ARG NODE_VERSION=20.12.2
-FROM node:${NODE_VERSION}-slim as base
-
-LABEL fly_launch_runtime="Node.js"
+FROM node:24-slim AS base
 
 # Node.js app lives here
 WORKDIR /app
@@ -12,19 +6,16 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
-# Throw-away build stage to reduce size of final image
-FROM base as build
-
-# Install packages needed to build node modules
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
+# Build in a throwaway, to reduce size of final image
+FROM base AS build
 
 # Install node modules
-COPY --link package-lock.json package.json ./
+COPY ./package.json .
+COPY ./package-lock.json .
 RUN npm ci
 
 # Copy application code
-COPY --link . .
+COPY . ./
 
 # Final stage for app image
 FROM base
@@ -33,9 +24,8 @@ FROM base
 COPY --from=build /app /app
 
 # Setup sqlite3 on a separate volume
-RUN mkdir -p /.data
-VOLUME /.data
+VOLUME /app/.data
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "start" ]

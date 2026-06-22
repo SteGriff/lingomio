@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "services": {
+    "web": {
+      "port": 3000,
+      "volumes": [
+        {
+          "name": "lingomio-data",
+          "destinationPath": "/app/.data"
+        }
+      ]
+    },
+    "hook:deploy:start:before": {
+      "type": "command",
+      "command": "npm run build-ui"
+    }
+  }
+}
