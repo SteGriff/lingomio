@@ -9,10 +9,6 @@
           "destinationPath": "/app/.data"
         }
       ]
-    },
-    "hook:deploy:start:before": {
-      "type": "command",
-      "command": "npm run build-ui"
     }
   }
 }
