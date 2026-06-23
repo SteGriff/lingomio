@@ -114,6 +114,10 @@ app.post("/logout", async (req, res) => {
   res.redirect("/");
 });
 
+app.get("/apis", (req, res) => {
+  res.render("apis", getModel(req));
+});
+
 // - JSON API
 
 app.get("/api", async (_, res) => {
