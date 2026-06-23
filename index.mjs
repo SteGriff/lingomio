@@ -23,9 +23,10 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Gets NODE_ENV, which defaults to development.
+// Get NODE_ENV, which defaults to development
+// and trust first proxy (pass session cookie) in prod
 const isDev = app.get("env") === "development";
-if (!isDev) app.set('trust proxy', true);
+if (!isDev) app.set('trust proxy', 1);
 
 // Set the view engine to our custom engine
 app.engine('htm', sste);
