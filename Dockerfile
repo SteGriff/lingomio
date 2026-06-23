@@ -13,7 +13,6 @@ FROM base AS build
 COPY ./package.json .
 COPY ./package-lock.json .
 RUN npm ci
-RUN npm run build-ui
 
 # Copy application code
 COPY . ./
