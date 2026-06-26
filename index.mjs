@@ -61,7 +61,7 @@ app.use(
       httpOnly: true,
       secure: !isDev,
       sameSite: true,
-      maxAge: 600_000, // ms
+      maxAge: 172_800_000, // ms = 48 hrs
     },
   })
 );
