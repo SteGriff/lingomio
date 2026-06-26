@@ -420,7 +420,7 @@
     },
     saveExplanation() {
       this.showTools(this.explaining);
-      this.explanation.forEach((e) => {
+      this.explanation.reverse().forEach((e) => {
         this.add(this.elementFactory.gloss, e.definition, e.term);
       });
     },
