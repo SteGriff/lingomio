@@ -310,6 +310,15 @@
                 <dd>{{item.definition}}</dd>
             </template>
         </dl>
+        <div class="mv2">
+            <button type="submit" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4 b"
+                @click="saveExplanation()">
+                Save
+            </button>
+            <button type="button" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4" @click="dialog = null">
+                Cancel
+            </button>
+        </div>
     </div>
 </div>
 
