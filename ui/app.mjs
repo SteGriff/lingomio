@@ -11,7 +11,7 @@ const elementFactory = new ElementFactory();
 const nameFactory = new NameFactory();
 
 const storageLoad = (key) => {
-  console.log("storageLoad");
+  console.log("storageLoad", key);
   const json = window.localStorage.getItem(key);
   if (json) {
     const saved = JSON.parse(json);
@@ -44,6 +44,7 @@ PetiteVue.createApp({
   pasteFailContent: "",
   importContent: "",
   userModel: null,
+  quotaModel: null,
   username: '',
   password: '',
   explanation: null,
@@ -61,9 +62,14 @@ PetiteVue.createApp({
 
     // Check session
     await this.checkSession();
+    await this.checkQuota();
 
     // Load from LS
-    this.currentBook = storageLoad(CONTENT) || this.currentBook();
+    const loadedBook = storageLoad(CONTENT);
+    console.log("loadedBook", loadedBook);
+    if (loadedBook) {
+      this.currentBook = loadedBook
+    }
     this.userModel = storageLoad(USER) || this.userModel;
     // Set up
     this.addPoint = this.nextOrdinal();
@@ -244,7 +250,7 @@ PetiteVue.createApp({
     if (!this.currentBook.cuid)
       this.currentBook.cuid = cuid();
 
-    console.log("Save", this.currentBook.cuid);
+    console.log("Save", this.currentBook);
 
     // Save to LS
     const json = JSON.stringify(this.currentBook);
@@ -338,7 +344,6 @@ PetiteVue.createApp({
     if (model) {
       this.dialog = null;
       this.getBooksList();
-      this.save(); // Newly reg user - save their book
     }
     else
       this.toast("Log in to sync data");
@@ -356,6 +361,17 @@ PetiteVue.createApp({
       }
     } catch (error) {
       console.log("Catch checkSession", error);
+    }
+  },
+  async checkQuota() {
+    try {
+      const response = await fetch("/api/quota");
+      const json = await response.json();
+      if (json.status === "OK") {
+        this.quotaModel = json.model;
+      }
+    } catch (error) {
+      console.log("Catch checkQuota", error);
     }
   },
   booksDialog() {

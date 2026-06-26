@@ -217,7 +217,7 @@
   var elementFactory = new ElementFactory();
   var nameFactory = new NameFactory();
   var storageLoad = (key) => {
-    console.log("storageLoad");
+    console.log("storageLoad", key);
     const json = window.localStorage.getItem(key);
     if (json) {
       const saved = JSON.parse(json);
@@ -248,6 +248,7 @@
     pasteFailContent: "",
     importContent: "",
     userModel: null,
+    quotaModel: null,
     username: "",
     password: "",
     explanation: null,
@@ -263,7 +264,12 @@
         }
       });
       await this.checkSession();
-      this.currentBook = storageLoad(CONTENT) || this.currentBook();
+      await this.checkQuota();
+      const loadedBook = storageLoad(CONTENT);
+      console.log("loadedBook", loadedBook);
+      if (loadedBook) {
+        this.currentBook = loadedBook;
+      }
       this.userModel = storageLoad(USER) || this.userModel;
       this.addPoint = this.nextOrdinal();
     },
@@ -424,7 +430,7 @@
     save() {
       if (!this.currentBook.cuid)
         this.currentBook.cuid = (0, import_cuid2.default)();
-      console.log("Save", this.currentBook.cuid);
+      console.log("Save", this.currentBook);
       const json = JSON.stringify(this.currentBook);
       window.localStorage.setItem(CONTENT, json);
       const hasChanged = !this.elementFactory.isUnchangedElements(this.currentBook.elements);
@@ -507,7 +513,6 @@
       if (model) {
         this.dialog = null;
         this.getBooksList();
-        this.save();
       } else
         this.toast("Log in to sync data");
     },
@@ -524,6 +529,17 @@
         }
       } catch (error) {
         console.log("Catch checkSession", error);
+      }
+    },
+    async checkQuota() {
+      try {
+        const response = await fetch("/api/quota");
+        const json = await response.json();
+        if (json.status === "OK") {
+          this.quotaModel = json.model;
+        }
+      } catch (error) {
+        console.log("Catch checkQuota", error);
       }
     },
     booksDialog() {
