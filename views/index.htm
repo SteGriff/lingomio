@@ -1,5 +1,5 @@
 <header @vue:mounted="mounted">
-    <div class="bg-black-90 flex pa3 w-100 center white">
+    <div class="bg-black-90 flex ph3 pv2 w-100 center white">
         <div class="mv2 mr2">
             <button class="sqr-28 ba bw1 b--white bg-black white tc b pointer pt1" @click="menu = !menu">
                 <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16" class="icon-white">
@@ -12,7 +12,7 @@
         <h1 class="f5 b">Lingomio</h1>
         <p v-if="userModel" class="f6 mh3">
             <a class="pointer" @click="booksDialog()">
-                {{ currentBook.name }}
+                📔 {{ currentBook.name }}
             </a>
         </p>
     </div>
@@ -71,7 +71,8 @@
         <div v-if="el.elementType === elementFactory.gloss">
             <div class="flex justify-center">
                 <input class="pa2 f4 mh1 mh2-ns w-40 minw4 foreign tr" v-model="el.words[0].foreign"
-                    placeholder="A word to learn" @focus="select(el)" @blur="blur()" />
+                    :lang="currentBook.learningLanguage" placeholder="A word to learn" @focus="select(el)"
+                    @blur="blur()" />
                 <input class="pa2 f4 mh1 mh2-ns w-40 minw4 local tl" v-model="el.words[0].local"
                     placeholder="Meaning/gloss" @focus="select(el)" @blur="blur()" />
             </div>
@@ -111,9 +112,9 @@
 
         <!-- Buttons -->
         <div class="flex flex-wrap justify-center items-center" v-if="isSel(el)">
-            <button type="button" class="pointer pa0 tc w2 h2 ma1 mr3 b--black bw1 br2 bg-white black"
+            <button type="button" class="pointer pa0 tc w2 h2 ma1 mr3 b b--black bw1 br2 bg-white black"
                 v-if="el.order !== maxOrdinal()" @click="toggleTools(el)">
-                📚
+                +
             </button>
 
             <button type="button" v-if="el.elementType === elementFactory.usage"
@@ -152,15 +153,15 @@
             </button>
             <button type="button" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4"
                 @click="add(elementFactory.gloss)">
-                Gloss 📔
+                Gloss
             </button>
             <button type="button" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4"
                 @click="add(elementFactory.ab)">
-                A/B 🆎
+                Comparison
             </button>
             <button type="button" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4"
                 @click="add(elementFactory.mnem)">
-                Mnemonic 🧠
+                Mnemonic
             </button>
             <button type="button" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4"
                 @click="add(elementFactory.usage)">
@@ -171,7 +172,7 @@
 
     <div class="flex justify-center mt4" v-if="addToolLocation !== 'END'">
         <button type="button" class="pointer pa2 ma2 b--black bw1 br2 bg-white black minw4" @click="toggleTools()">
-            Add 📚
+            Add &plus;
         </button>
     </div>
 </main>
@@ -187,15 +188,15 @@
     </div>
     <div v-if="dialog === 'LOGIN'">
         <form @submit.prevent="login()">
-            <div class="pv1 dt">
-                <label for="username" class="dtc w4 tr">Username:</label>
-                <input name="username" id="username" type="text" placeholder="Username" v-model="username"
-                    class="dtc pa2 f4 mh1 mh2-ns minw4">
+            <div class="pv1">
+                <label for="username" class="db w4 f6 b">Username</label>
+                <input name="username" id="username" type="text" placeholder="Username" autocorrect="off" required
+                    v-model="username" class="pa2 f4 minw4 w-100">
             </div>
-            <div class="pv1 dt">
-                <label for="password" class="dtc w4 tr">Password:</label>
-                <input name="password" id="password" type="password" placeholder="Password" v-model="password"
-                    class="dtc pa2 f4 mh1 mh2-ns minw4">
+            <div class="pv1">
+                <label for="password" class="db w4 f6 b">Password</label>
+                <input name="password" id="password" type="password" placeholder="Password" required v-model="password"
+                    class="pa2 f4 minw4 w-100">
             </div>
             <div class="mv2">
                 <p v-if="message" class="mv2">{{message}}</p>
@@ -245,7 +246,7 @@
         <div class="dt mt2 center">
             <button type="button" v-else class="dtc pointer pa2 mh3 b--black bw1 br2 bg-white black minw4"
                 @click="load(true)">
-                📜 Overwrite this book
+                Overwrite this book
             </button>
             <button type="button" v-else class="dtc pointer pa2 mh3 b--black bw1 br2 bg-white black minw4"
                 @click="load(false)">
@@ -274,16 +275,22 @@
     <div v-if="dialog === 'RENAME'">
         <div class="pv1">
             <form @submit.prevent="saveName()">
-                <label class="db pv1">
-                    Book name:
-                    <input name="name" type="text" placeholder="Book name" v-model="currentBook.name"
-                        class="pa2 f4 mh1 mh2-ns w-40 minw4">
-                </label>
-                <label class="db pv1">
-                    Learning:
-                    <input name="learningLanguage" type="text" placeholder="Learning Language"
-                        v-model="currentBook.learningLanguage" class="pa2 f4 mh1 mh2-ns w-40 minw4">
-                </label>
+                <div class="pv1">
+                    <label for="bookName" class="db w4 f6 b">
+                        Book name
+                    </label>
+                    <input id="bookName" name="name" type="text" placeholder="Book name" v-model="currentBook.name"
+                        class="pa2 mb2 f4 minw4 w-100">
+                </div>
+                <div class="pv1">
+                    <label for="learningLanguage" class="db w4 f6 b">
+                        Learning
+                    </label>
+                    <input id="learningLanguage" name="learningLanguage" type="text" autocorrect="off"
+                        spellcheck="false" placeholder="Learning Language" v-model="currentBook.learningLanguage"
+                        class="pa2 f4 minw4 w-100">
+                </div>
+
                 <div class="mv2">
                     <button type="submit" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4 b">
                         Save
