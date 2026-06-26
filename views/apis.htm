@@ -1,35 +1,66 @@
-<h1>APIs</h1>
+<div class="center mw6">
+  <h1>APIs</h1>
 
-<p>Get User:</p>
-<button type="button" onclick="me.getUser()">GET /api/user</button>
+  <p>Get User:</p>
+  <button type="button" onclick="me.getUser()">GET /api/user</button>
 
-<p>Log out:</p>
-<button type="button" onclick="me.logout()">POST /api/logout</button>
+  <p>Get Quota:</p>
+  <button type="button" onclick="me.getQuota()">GET /api/quota</button>
 
-<p>Register/Log in:</p>
-<form class="ba ph2 pb2">
-  <p>
-    <label>Username:<input type="text" name="username" class="js-username"></label>
-  </p>
-  <p>
-    <label>Password:<input type="password" name="password" class="js-password"></label>
-  </p>
-  <button type="submit" onclick="me.login(event)">POST /api/login</button>
-  <button type="button" onclick="me.register(event)">POST /api/register</button>
-</form>
+  <p>Log out:</p>
+  <button type="button" onclick="me.logout()">POST /api/logout</button>
 
-<h2>Result</h2>
-<p>Status: <span class="js-status"></span></p>
-<pre class="js-results"></pre>
+  <p>Register/Log in:</p>
+  <form class="ba ph2 pb2">
+    <p>
+      <label>Username:<input type="text" name="username" class="js-username"></label>
+    </p>
+    <p>
+      <label>Email:<input type="email" name="email" class="js-email"></label>
+    </p>
+    <p>
+      <label>Password:<input type="password" name="password" class="js-password"></label>
+    </p>
+    <button type="submit" onclick="me.login(event)">POST /api/login</button>
+    <button type="button" onclick="me.register(event)">POST /api/register</button>
+  </form>
 
+  <p>Explain:</p>
+  <form class="ba ph2 pb2">
+    <p>
+      <label>Phrase:<input type="text" name="phrase" class="js-phrase"></label>
+    </p>
+    <button type="submit" onclick="me.explain(event)">POST /api/explain</button>
+  </form>
+
+  <h2>Result</h2>
+  <p>Status: <span class="js-status"></span></p>
+  <pre class="js-results"></pre>
+</div>
 <script>
   app = function () {
     this.getUser = async function () {
       const response = await fetch("/api/user/");
       this.print(response);
     }
+    this.getQuota = async function () {
+      const response = await fetch("/api/quota/");
+      this.print(response);
+    }
+    this.explain = async function (event) {
+      event.preventDefault();
+      const phrase = this.$("js-phrase").value;
+      const response = await fetch("/api/explain/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ text: phrase, learningLanguage: "en" })
+      });
+      this.print(response);
+    }
     this.logout = async function () {
-      const response = await fetch("/api/logout/", {method: "POST"});
+      const response = await fetch("/api/logout/", { method: "POST" });
       this.print(response);
     }
     this.login = async function (event) {
@@ -60,6 +91,9 @@
       return {
         "username": this
           .$("js-username")
+          .value,
+        "email": this
+          .$("js-email")
           .value,
         "password": this
           .$("js-password")

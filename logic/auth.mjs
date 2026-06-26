@@ -75,7 +75,7 @@ export const createUser = async (db, userModel) => {
   if (!userModel.username || !userModel.password)
     return getError("Missing username or password");
 
-  if (!isEmail(userModel.email))
+  if (!userModel.email || !isEmail(userModel.email))
     return getError("Invalid email address");
 
   // If user exists, quit

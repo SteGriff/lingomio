@@ -1,4 +1,5 @@
 export const normalizePhrase = (phrase) => {
+    if (!phrase) return '';
     return phrase.toLowerCase().replace(/\s+/g, ' ').trim();
 };
 

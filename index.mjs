@@ -11,7 +11,7 @@ import { getSuccess, getError, isSuccess } from "./results.mjs";
 import { createOrUpdateBook, getBook, getBooks } from "./logic/books.mjs";
 import { LLM, TTS, checkAndIncreaseUsage } from "./logic/quota.mjs";
 import { explain } from "./logic/explain/explain.mjs";
-import { getUserQuota } from "./logic/quota.mjs";
+import { getUserQuota, getCurrentPeriodStart } from "./logic/quota.mjs";
 import { normalizePhrase, getCachedExplanation, cacheExplanation } from "./logic/explain/cache.mjs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -197,6 +197,10 @@ app.post("/api/book/:cuid", auth, async (req, res) => {
 // Explain endpoint
 app.post("/api/explain", auth, async (req, res) => {
   const userId = req.session.user.id;
+
+  if (!req.body.text || !req.body.learningLanguage) {
+    return res.status(400).json(getError("Missing required fields"));
+  }
 
   const text = req.body.text;
   const languageCode = req.body.learningLanguage;
