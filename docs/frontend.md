@@ -37,8 +37,8 @@ Summary of the frontend functionality:
 
 - **Methods**:
   - `select(element, word)`: Selects an element and optionally a word within it.
-  - `hideElementTools()`: Hides the element tools.
-  - `toggleTools(element)`: Toggles the visibility of the element tools.
+  - `hideTools()`: Hides the element tools.
+  - `showTools(element)`: Shows the element tools at the given element or the end of the doc if null
   - `add(elementType)`: Adds a new element of the specified type to the current book.
   - `remove(element)`: Removes an element from the current book.
   - `addWord(element)`: Adds a new word to an element.

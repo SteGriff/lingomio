@@ -106,7 +106,7 @@ PetiteVue.createApp({
   isSel(element) {
     return element.id === this.selected;
   },
-  showTools(element) {
+  toolsVisible(element) {
     const isOpenOnElement =
       this.addToolLocation === "ELEMENT" &&
       this.isSel(element) &&
@@ -121,21 +121,21 @@ PetiteVue.createApp({
     const prevSelected = this.selected;
     this.selected = element.id;
     if (word) this.selectedWord = word.id;
-    if (this.selected !== prevSelected) this.hideElementTools();
+    if (this.selected !== prevSelected) this.hideTools();
   },
-  hideElementTools() {
+  hideTools() {
     if (this.addToolLocation === "ELEMENT") this.addToolLocation = null;
-    console.log("hideElementTools", this.addToolLocation, this.addPoint);
+    console.log("hideTools", this.addToolLocation, this.addPoint);
   },
-  toggleTools(element) {
+  showTools(element) {
     this.menu = false;
     const toolLocationTarget = element ? "ELEMENT" : "END";
     this.addPoint = element ? element.order : this.nextOrdinal();
     this.addToolLocation =
       this.addToolLocation === toolLocationTarget ? null : toolLocationTarget;
-    console.log("toggleTools", this.addToolLocation, this.addPoint);
+    console.log("showTools", this.addToolLocation, this.addPoint);
   },
-  add(elementType) {
+  add(elementType, local = "", foreign = "") {
     this.menu = false;
     const order =
       this.addToolLocation === "END" ? this.maxOrdinal() : this.addPoint;
@@ -149,7 +149,9 @@ PetiteVue.createApp({
     // Add new element
     const newEl = this.elementFactory.createElement(
       elementType || this.elementFactory.gloss,
-      newOrdinal
+      newOrdinal,
+      local,
+      foreign
     );
     this.currentBook.elements.push(newEl);
     console.log("add", order, elementType);
@@ -198,7 +200,7 @@ PetiteVue.createApp({
       return;
     }
 
-    this.explaining = true;
+    this.explaining = element;
     const data = {
       text: element.words[0].phrase,
       learningLanguage: this.currentBook.learningLanguage
@@ -228,6 +230,12 @@ PetiteVue.createApp({
     this.explanation = json.model;
     element.words[0].explanation = json.model;
     this.dialog = "EXPLAIN";
+  },
+  saveExplanation() {
+    this.showTools(this.explaining);
+    this.explanation.forEach((e) => {
+      this.add(this.elementFactory.gloss, e.definition, e.term);
+    });
   },
   blur() {
     this.save();

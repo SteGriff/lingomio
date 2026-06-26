@@ -113,11 +113,11 @@
         <!-- Buttons -->
         <div class="flex flex-wrap justify-center items-center" v-if="isSel(el)">
             <button type="button" class="pointer pa0 tc w2 h2 ma1 mr3 b b--black bw1 br2 bg-white black"
-                v-if="el.order !== maxOrdinal()" @click="toggleTools(el)">
+                v-if="el.order !== maxOrdinal()" @click="showTools(el)">
                 +
             </button>
 
-            <button type="button" v-if="el.elementType === elementFactory.usage"
+            <button type="button" v-if="el.elementType === elementFactory.usage" title="Explain this usage with AI"
                 class="pointer pa0 tc w2 h2 ma1 mr3 b--black bw1 br2 bg-white black" @click="explain(el)">
                 {{ explaining ? "🤔" : "🦜" }}
             </button>
@@ -146,7 +146,7 @@
 
         <!-- New Element Tools -->
         <div class="flex flex-wrap justify-center mt1"
-            :class="{'mt1' : addToolLocation === 'ELEMENT', 'mt4' : addToolLocation === 'END'}" v-if="showTools(el)">
+            :class="{'mt1' : addToolLocation === 'ELEMENT', 'mt4' : addToolLocation === 'END'}" v-if="toolsVisible(el)">
             <button type="button" class="pointer pa1 ma1 b--black bw1 br2 bg-white black minw4"
                 @click="add(elementFactory.h1)">
                 Heading 📰
@@ -171,7 +171,7 @@
     </div>
 
     <div class="flex justify-center mt4" v-if="addToolLocation !== 'END'">
-        <button type="button" class="pointer pa2 ma2 b--black bw1 br2 bg-white black minw4" @click="toggleTools()">
+        <button type="button" class="pointer pa2 ma2 b--black bw1 br2 bg-white black minw4" @click="showTools()">
             Add &plus;
         </button>
     </div>
